@@ -1,5 +1,6 @@
 import React, { useContext, useRef, useState } from "react";
 import { DiaryDispatchContext } from "./App";
+import EmotionSelect from "./EmotionSelect";
 
 const DiaryItem = ({ id, author, content, emotion, created_date }) => {
   const { onRemove, onEdit } = useContext(DiaryDispatchContext);
@@ -41,39 +42,17 @@ const DiaryItem = ({ id, author, content, emotion, created_date }) => {
     }
   };
 
-  // 수정 : A
-  // 수정 계획 내용 :
-  // 1. 감정점수를 바꾸는 select tag를 밖에 따로 정의하고 사용
-  const selectEmotion = () => {
-    return (
-      <select>
-        <option value={1}>1</option>
-        <option value={1}>2</option>
-        <option value={1}>3</option>
-        <option value={1}>4</option>
-        <option value={1}>5</option>
-      </select>
-    );
-  };
-
   return (
     <div className="DiaryItem">
       <div className="info">
         <span>
           {isEdit ? (
             <>
-              {/* 수정 A */}
               작성자 : {author} | 감정점수{" "}
-              <select
+              <EmotionSelect
                 value={localEmotion}
                 onChange={(e) => setLocalEmotion(e.target.value)}
-              >
-                <option value={1}>1</option>
-                <option value={2}>2</option>
-                <option value={3}>3</option>
-                <option value={4}>4</option>
-                <option value={5}>5</option>
-              </select>
+              />
             </>
           ) : (
             <>

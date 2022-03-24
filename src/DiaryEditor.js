@@ -1,5 +1,6 @@
 import React, { useContext, useRef, useState } from "react";
 import { DiaryDispatchContext } from "./App";
+import EmotionSelect from "./EmotionSelect";
 
 const DiaryEditor = () => {
   const { onCreate } = useContext(DiaryDispatchContext);
@@ -60,17 +61,11 @@ const DiaryEditor = () => {
         />
       </div>
       <div>
-        <select
+        <EmotionSelect
           name="emotion"
           value={state.emotion}
           onChange={handleChangeState}
-        >
-          <option value={1}>1</option>
-          <option value={2}>2</option>
-          <option value={3}>3</option>
-          <option value={4}>4</option>
-          <option value={5}>5</option>
-        </select>
+        />
       </div>
       <div>
         <button onClick={handleSubmit}>일기 저장하기</button>
