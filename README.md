@@ -6,7 +6,7 @@
 - 버전 관리 툴 : git
 - https://otuin.tistory.com/370
 - node_modules 설치 하기 : "npm i" 명령어 입력
-- 실행
+- 실행 하기 : "npm start" 명령어 입력
  
 # 저장소 clone 하기
 1. terminal 실행
