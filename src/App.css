@@ -55,6 +55,7 @@ textarea {
 
 .DiaryItem .date {
   color: gray;
+  font-size: small;
 }
 
 .DiaryItem .content {

@@ -27,7 +27,9 @@ const reducer = (state, action) => {
     }
     case "EDIT": {
       return state.map((it) =>
-        it.id === action.targetId ? { ...it, content: action.newContent } : it
+        it.id === action.targetId
+          ? { ...it, content: action.newContent, emotion: action.newEmotion }
+          : it
       );
     }
     default:
@@ -78,8 +80,8 @@ const App = () => {
     dispatch({ type: "REMOVE", targetId });
   }, []);
 
-  const onEdit = useCallback((targetId, newContent) => {
-    dispatch({ type: "EDIT", targetId, newContent });
+  const onEdit = useCallback((targetId, newContent, newEmotion) => {
+    dispatch({ type: "EDIT", targetId, newContent, newEmotion });
   }, []);
 
   const memoizedDispatches = useMemo(() => {
